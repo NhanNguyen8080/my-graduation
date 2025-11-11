@@ -100,7 +100,7 @@ function InvitationScreen({ guestName, guestEmail, onAttend, onDecline, onBack }
       <div className="invitation-wrapper">
         <GraduationCard onBack={onBack} isSubmitting={isSubmitting} guestName={guestName}>
           <div className="card-actions">
-            <p className="rsvp-label">:dự tham nhận Xác</p>
+            <p className="rsvp-label">Xác nhận tham dự: </p>
             <div className="card-buttons">
               <button 
                 className="btn success" 

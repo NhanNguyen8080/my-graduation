@@ -61,14 +61,15 @@
   border: 1px solid #e5e7eb;
   background: rgba(255, 255, 255, 0.9);
   color: #667085;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 3px 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 500;
   font-family: system-ui, -apple-system, sans-serif;
   min-width: auto;
+  white-space: nowrap;
 }
 
 .card-top-left:hover:not(:disabled) {
@@ -631,8 +632,9 @@
   .card-header {
     flex-direction: column;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 50px;
     margin-bottom: 10px;
+    padding-top: 10px;
   }
 
 
@@ -703,10 +705,16 @@
   }
 
   .card-top-left {
-    top: 15px;
-    left: 15px;
-    padding: 6px 12px;
-    font-size: 12px;
+    top: 10px;
+    right: 15%;
+    left: auto;
+    padding: 2.5px 4px;
+    font-size: 9px;
+    width: 70% !important;
+    z-index: 100;
+    position: fixed;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
   }
 }
 

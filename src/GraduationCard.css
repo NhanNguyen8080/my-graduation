@@ -565,14 +565,23 @@
   .event-details {
     gap: 12px;
     margin: 15px 0;
+    width: 100%;
   }
 
   .detail-item {
     padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .detail-icon {
     font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .detail-content {
+    min-width: 0;
+    flex: 1;
   }
 
   .detail-label {
@@ -581,11 +590,13 @@
 
   .detail-value {
     font-size: 14px;
+    word-wrap: break-word;
   }
 
   .detail-address {
     font-size: 12px;
     margin-top: 4px;
+    word-wrap: break-word;
   }
 
   .closing-text {
@@ -660,28 +671,35 @@
   }
 
   .card-actions {
-    bottom: 15px;
-    right: 15px;
-    gap: 10px;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    gap: 12px;
     align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
   }
 
   .rsvp-label {
     font-size: 14px;
     text-align: center;
+    width: 100%;
+    margin-bottom: 8px;
   }
 
   .card-buttons {
     flex-direction: column;
     width: 100%;
-    gap: 8px;
+    gap: 10px;
   }
 
   .card-buttons .btn {
-    padding: 10px 18px;
+    padding: 12px 20px;
     font-size: 14px;
-    min-width: 140px;
+    min-width: auto;
     width: 100%;
+    max-width: 280px;
   }
 
   .card-top-left {

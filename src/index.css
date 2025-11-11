@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  color: #101828;
+  background: radial-gradient(1200px 800px at 75% -10%, #e0e7ff 0%, #f6f8fd 60%), #f6f8fd;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

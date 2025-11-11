@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './NameForm.css';
 
-function NameForm({ onSubmit, initialName = '', initialEmail = '' }) {
+function NameForm({ onSubmit, initialName = '' }) {
   const [name, setName] = useState(initialName);
-  const [email, setEmail] = useState(initialEmail);
   const nameInputRef = useRef(null);
 
   useEffect(() => {
@@ -18,25 +17,18 @@ function NameForm({ onSubmit, initialName = '', initialEmail = '' }) {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const prefillName = (params.get('name') || '').trim();
-    const prefillEmail = (params.get('email') || '').trim();
     if (prefillName) {
       setName(prefillName);
-    }
-    if (prefillEmail) {
-      setEmail(prefillEmail);
     }
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const trimmedName = name.trim();
-    const trimmedEmail = email.trim();
-    if (trimmedName && trimmedEmail) {
-      onSubmit({ name: trimmedName, email: trimmedEmail });
+    if (trimmedName) {
+      onSubmit({ name: trimmedName });
     } else {
-      if (!trimmedName) {
-        nameInputRef.current?.focus();
-      }
+      nameInputRef.current?.focus();
     }
   };
 
@@ -53,7 +45,7 @@ function NameForm({ onSubmit, initialName = '', initialEmail = '' }) {
         </div>
 
         <div className="card-content">
-          <p className="invitation-text">Cho mình xin thông tin của bạn nhé.</p>
+          <p className="invitation-text">Cho mình xin name của bạn nhé.</p>
           
           <form onSubmit={handleSubmit} autoComplete="off" className="name-form">
             <div className="form-group">
@@ -66,19 +58,6 @@ function NameForm({ onSubmit, initialName = '', initialEmail = '' }) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 ref={nameInputRef}
-                required
-              />
-            </div>
-            
-            <div className="form-group">
-              <label htmlFor="guestEmail">Email của bạn</label>
-              <input
-                id="guestEmail"
-                name="guestEmail"
-                type="email"
-                placeholder="VD: qnhandepzaiso1@gmail.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>

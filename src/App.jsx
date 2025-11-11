@@ -22,10 +22,8 @@ function App() {
   // Check sessionStorage on mount
   useEffect(() => {
     const savedName = sessionStorage.getItem('guestName');
-    const savedEmail = sessionStorage.getItem('guestEmail');
-    if (savedName && savedEmail) {
+    if (savedName) {
       setGuestName(savedName);
-      setGuestEmail(savedEmail);
       setCurrentScreen(SCREENS.INVITATION);
       document.title = `Thiệp mời • ${savedName}`;
     }
@@ -35,15 +33,12 @@ function App() {
     setCurrentScreen(SCREENS.NAME_FORM);
   };
 
-  const handleNameSubmit = ({ name, email }) => {
-    console.log('NameForm submitted:', { name, email });
+  const handleNameSubmit = ({ name }) => {
+    console.log('NameForm submitted:', { name });
     setGuestName(name);
-    setGuestEmail(email);
     sessionStorage.setItem('guestName', name);
-    sessionStorage.setItem('guestEmail', email);
     console.log('Saved to sessionStorage:', {
-      guestName: sessionStorage.getItem('guestName'),
-      guestEmail: sessionStorage.getItem('guestEmail')
+      guestName: sessionStorage.getItem('guestName')
     });
     document.title = `Thiệp mời • ${name}`;
     setCurrentScreen(SCREENS.INVITATION);
@@ -75,7 +70,6 @@ function App() {
         <NameForm 
           onSubmit={handleNameSubmit}
           initialName={guestName}
-          initialEmail={guestEmail}
         />
       )}
       

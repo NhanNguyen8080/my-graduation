@@ -1,5 +1,5 @@
 import './GraduationCard.css';
-import studentImage from './assets/SE162122_1.jpg';
+import studentImage from './assets/SE162122_1-removebg-preview.jpg';
 import mortarboardIcon from './assets/graduation-cap-removebg-preview.png';
 
 function GraduationCard({ children, onBack, isSubmitting, guestName }) {
